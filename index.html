@@ -1,14 +1,70 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="no-js" lang="">
     <head>
-        <title>Julio Silva</title>
+        <base href="/" />
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>CodeZen</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="content/css/base.css">
     </head>
-<body>
-    <h1>Hello World</h1>
-    <p>I'm hosted with GitHub Pages.</p>
-    <div style="position:absolute; top:0px; left:0px; width:100%; height:100%; background-color:#a7080b;">
-        <h1 style="font-family:Roboto, Constantia;font-size:10px; color:white;position:absolute;bottom:0px; right:8px;">COMING SOON!!!</h1>
-    </div>
-    
-</body>
+    <body ng-app="QrCode" ng-controller="AppController">
+        
+        <div class="view-animate-container cf_">
+            <div ng-outlet  class="view-animate"></div>
+        </div>
+
+        <!-- <script type="text/javascript" src="scripts/lib/jsqr/grid.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr/version.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr/detector.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr/formatinf.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr/errorlevel.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr/bitmat.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr/datablock.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr/bmparser.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr/datamask.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr/rsdecoder.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr/gf256poly.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr/gf256.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr/decoder.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr/qrcode.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr/findpat.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr/alignpat.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr/databr.js"></script> -->
+        <script src="scripts/lib/jquery-3.1.0.min.js"></script>        
+
+        <script type="text/javascript" src="scripts/lib/jsqr2/grid.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr2/version.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr2/detector.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr2/formatinf.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr2/errorlevel.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr2/bitmat.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr2/datablock.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr2/bmparser.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr2/datamask.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr2/rsdecoder.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr2/gf256poly.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr2/gf256.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr2/decoder.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr2/QRCode.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr2/findpat.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr2/alignpat.js"></script>
+        <script type="text/javascript" src="scripts/lib/jsqr2/databr.js"></script>
+
+        <script type="text/javascript" src="scripts/lib/qr.js"></script>
+        <script type="text/javascript" src="scripts/lib/camera.js"></script>
+        <!-- <script type="text/javascript" src="scripts/lib/init.js"></script> -->
+
+        <script src="scripts/lib/angular/angular.min.js"></script>
+        <script src="scripts/lib/angular/angular-animate.min.js"></script>
+        <script src="scripts/lib/angular/router.es5.js"></script>
+        
+        <script src="scripts/lib/scrollTo.js"></script>        
+       <!--  <script src="scripts/lib/qrcode.min.js"></script>        
+        <script src="scripts/lib/html5-qrcode.js"></script>         -->
+        <script src="scripts/oozaru.js"></script>
+                 
+    </body>
 </html>
