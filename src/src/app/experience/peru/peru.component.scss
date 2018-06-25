@@ -1,0 +1,204 @@
+@import '../../../assets/sass-tools/tools.scss';
+
+section#peru-section{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url('./../../../assets/images/peru/bg.png') center center / cover no-repeat;
+
+    div.text-content{
+        height: 248px;
+        max-width: 362px;
+        width: 100%;
+        margin-left: 109px;
+        position: relative;
+        transform: translateY(-50%);
+        top: 50%;
+
+        p.title{
+            /* Style for "our planta" */
+            max-width: 240px;
+            width: 100%;
+            color: #ffffff;
+            font: {
+                family: $humans;
+                size: 26px;
+            }
+
+            line-height: 30px;
+            text-transform: uppercase;
+            margin-bottom: 35px;
+        }
+
+        p.desc{
+            /* Style for "Having tra" */
+            width: 100%;
+            color: #ffffff;
+            font: {
+                family: $crimsonRoman;
+                size: 17px;
+            }
+            line-height: 23px;
+        }
+    }
+
+    .trail_1-content{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 267px;
+        // width: 53%;
+        // height: 60%;
+        width: 948px;
+        height: 361px;
+
+        svg-icon{
+            width: 100%;
+            
+            /deep/{
+                .st0{fill:none;stroke:#FFFFFF;stroke-width:0.65;stroke-miterlimit:10;}
+                .st1{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+                .st2{fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+                .st3{fill-rule:evenodd;clip-rule:evenodd;fill:#E97435;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+                .st4{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+                .st5{fill:#E97435;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+                .st6{fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+                .st7{fill:#EEECE9;}
+                .st8{fill:#7F674F;}
+                .st9{font-family:'Crimson-Roman';}
+                .st10{font-size:18px;}
+                #trail-1{
+                    .point{
+                        cursor: pointer;
+                        .tip{
+                            mask{
+                                path{
+                                    fill-opacity: 0;
+                                    stroke: #000000;
+                                    stroke-width: 25;
+                                    stroke-dasharray: 500;
+                                    stroke-dashoffset: 200;
+                                    transition: stroke-dashoffset 0.15s ease-out,fill-opacity 0.2s ease-out;
+                                }
+                            }
+                        }
+                        .circle{
+                            stroke: #FFFFFF;
+                            stroke-width: 3;
+                            transform-origin: center center;
+                            // fill-opacity: 0;
+                            opacity: .6;
+                            transition:transform 1s ease-out, opacity 1s ease-out;
+                            transform: scale(1);
+                            &.go{
+                                transform:scale(2);
+                                opacity: 0;
+                            }
+                        }
+
+                        .st3{
+                            transform-origin: center center;
+                            transform: scale(0);
+                            transition: transform 0.5s ease-out, fill-opacity 0.3s ease-out, stroke-width 0.3s ease-out;
+                        }
+
+                        .st1{
+                            &.hor{
+                                transform-origin: left center;
+                                transform: scaleX(0);
+                                transition: transform 0.5s ease-out .5s;
+                            }
+
+                            &.ver{
+                                transform-origin: center top;
+                                transform: scaleY(0);
+                                transition: transform 0.5s ease-out .65s;
+                            }
+                        }
+
+
+
+                        &.show{
+                            .st3{
+                                //transform: scale(1);
+                                @include circle-bounce();
+                            }
+                            .st1{
+                                transform: scaleX(1);
+                                transform: scaleY(1);
+                            }
+                        }
+
+                        &.active{
+                            .st3{
+                                transform: scale(0.7);
+                                fill-opacity:0;
+                                stroke-width: 1.5px;
+                            }
+                            .st1{
+                                &.hor{
+                                    transform-origin: center center;
+                                    transition: transform 0.15s ease-out;
+                                        transform: scaleX(0.1);
+                                }
+
+                                &.ver{
+                                    transform-origin: center center;
+                                    transition: transform 0.15s ease-out;
+                                    transform: scaleY(0);
+                                }
+                            }
+
+                            .tip{
+                                mask{
+                                    path{
+                                        transition: stroke-dashoffset .25s ease-out, fill-opacity 0.2s ease 0.1s;
+                                        fill-opacity: 1;
+                                        stroke-dashoffset: 500;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    /*.point-selected{
+                        .st1{
+                            transform-origin: center center;
+                            transform: scale(0);
+                            transition: transform 0.5s ease-out;
+                        }
+
+                        .st2{
+                            transform-origin: center center;
+                            transform: scale(0);
+                            transition: transform 0.5s ease-out .2s;
+                        }
+
+                         &.show{
+                            path{
+                                transform: scale(1);
+                            }
+                         }
+                    }*/
+                }
+
+                #xablau{
+                    path{
+                        stroke-width: 1;
+                        stroke: #FFF;
+                        stroke-dasharray: 2086;
+                        stroke-dashoffset: 2086;
+                        transition: stroke-dasharray 2.5s ease-out, stroke-dashoffset 2.5s ease-out;
+                        &.dashed{
+                            stroke-width: 2;
+                            stroke-dasharray: 4;
+                        }
+                        &.show.to-animate{
+                            stroke-dashoffset: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.store-cart
+  h1
+    |Carrinho
+  section.cart-container
+    table.products-table(*ngIf="cart.items.length")
+      thead
+        td
+          |Name
+        td
+          |Price
+        td
+          |Quantity
+      tbody
+        tr(*ngFor="let prod of cart.items")
+
+          td([innerHtml]="prod.name")
+          td([innerHtml]="prod.price")
+          td([innerHtml]="prod.qty")
+      tfoot
+        tr
+          td(colspan="2")
+            strong
+              |Total:
+          td([innerHtml]="cart.totals.subtotal")
+    
+    a([routerLink]="['', curr_lang, 'store' , 'checkout']")
+      |Finalizar compra
+
+    p(*ngIf="!cart.items.length")
+      |{{ 'store.store-cart-empty' | translate }}

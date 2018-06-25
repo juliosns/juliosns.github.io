@@ -1,0 +1,171 @@
+@import '../../assets/sass-tools/tools.scss';
+
+@keyframes warning{
+    0%{opacity: 0; top:-100px}
+    25%{opacity: 1; top:0px}
+    80%{opacity: 1; top:0px}
+    100%{opacity: 0; top:0px}
+}
+.alerts{
+    p{
+        left: 0px;
+        width: 100%;
+        background-color: #bf2222;
+        font-size: 18px;
+        font-family: $humans;
+        top: -100px;
+        padding: 20px 0px; 
+        z-index: 99;
+        text-align: center;
+        position: absolute;
+        color: $w;
+        animation: warning 2.5s;
+    }
+}
+#contact{
+    position: absolute;
+    background-color: #222222;
+    background-image: url(../../assets/images/content/bg-contact.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    ::-webkit-scrollbar-track {
+        background-color: #e9e0d9;
+    }
+    ::-webkit-scrollbar {
+        width: 2px;
+        background: #e9e0d9;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #aa927f;
+    }
+    main.container{
+        background-color: $w;
+        position: relative;
+        width: 95%;
+        height: auto;
+        top: 50%;
+        left: 50%;
+        max-width: 893px;
+        max-height: 540px;
+        transform: translateX(-50%) translateY(-50%);
+        padding: 47px 62px;
+        @media (max-width : 800px){    
+            overflow-y: scroll;
+            overflow-x: hidden;
+            max-height: 100%;
+            padding-bottom: 1em;
+        }
+        @media (max-width : 800px) and (orientation : portrait){
+            transform: translateX(-50%) translateY(-42%);
+            height: 70%;
+        }
+        @media (max-width : 800px) and (orientation : landscape){
+            transform: translateX(-50%) translateY(-35%);
+            height: 65%;
+        }
+        h1{
+            color: #f3792d;
+            font-weight: 600;
+            font-family: $humans;
+            font-size: 15px;
+            letter-spacing: 2px
+        }
+        .box-content{
+            display: flex;
+            padding: 48px 0px;
+            justify-content: space-between;
+            @media (max-width: 700px){
+                flex-direction: column;
+                padding: 18px 0px;
+            }
+            .infos{
+                width: 100%;
+                font-family: $crimsonRoman;
+                h2{
+                    font-weight: 400;
+                    font-size: 30px;
+                    color: #89674d;
+                    margin-bottom: 35px;
+                }
+                hr{
+                    background-color: #384044;
+                    border: 0px;
+                    width: 10px;
+                    height: 1px;
+                    margin-bottom: 38px;
+                    margin-left: 0px;
+                }
+                p, span{
+                    color: #384044;
+                    font-size: 18px;
+                    font-weight: normal;
+                    line-height: 22px;
+                    margin-bottom: 28px;
+                    
+                }
+            }
+            .form{
+                width: 100%;
+                @media (max-width : 800px){
+                    margin-top: 2em;
+                }
+                h2{
+                    font-family: $crimsonRoman;
+                }
+                input, textarea{
+                    resize: none;
+                    padding: 16px 17px;
+                    border: 0px;
+                    font-weight: 200;
+                    font-size: 15px;
+                    color: #89674d;
+                    width: 100%;
+                    outline: none;
+                    transition: all 0.5s;
+                    margin-bottom: 10px;
+                    &:focus{
+                        background-color: rgba(243, 121, 45, 0.3)
+                    }
+                    @media (max-width : 800px){
+                        background-color: rgba(243, 121, 45, 0.3)
+                    }
+                    @media (max-width: 1366px){
+                        font-size: 13px;
+                    }
+                     
+                }
+                input[type="submit"]{
+                    margin-top: 15px;
+                    font-family: $humans;
+                    background-color: #f3792d;
+                    width: 120px;
+                    border-radius: 2px;
+                    font-size: 13px;
+                    text-align: center;
+                    color: $w;
+                    font-weight: 500;
+                    letter-spacing: 1.2px;
+                    transition: $trs;
+                    &:hover{
+                        background-color: #de6b24;
+                    }
+                }
+                ::-webkit-input-placeholder{
+                    font-family: $humans;
+                    color: #89674d;
+                    font-weight: 500;
+                    font-size: 16px;
+                    letter-spacing: 0.5px;
+                }
+                .spinner{
+                    width: 35px;
+                    margin-top: 25px;
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}
+

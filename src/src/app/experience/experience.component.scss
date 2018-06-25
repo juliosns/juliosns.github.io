@@ -1,0 +1,83 @@
+@import './../../assets/sass-tools/tools.scss';
+
+section#experience{
+    width: 100%;
+    display: block;
+    min-height: 66px;
+    position: absolute;
+    bottom: 64px;
+    z-index: 666;
+
+    div.menu{
+        width: 95%;
+        margin: 0 auto;
+        display: block;
+        min-height: 66px;
+        position: relative;
+
+        nav{
+            width: 100%;
+            height: 100%;
+            display: inline-flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+
+            li{
+                width: 302px;
+                height: 66px;
+                background-color: #1e1e1e;
+                margin-right: 2px;
+                display: table;
+                cursor: pointer;
+
+                &.active{
+                    p.title{
+                        color: #f3792d;
+                    }
+                }
+
+                &:hover{
+                    p.title{
+                        color: #f3792d;
+                    }
+                }
+
+                p{
+                    font-family: $crimsonRoman;
+                    display: table-cell;
+                }
+
+                p.number{
+                    width: 57px;
+                    height: 30px;
+                    color: #89674d;
+                    float: left;
+                    font: {
+                        size: 28px;
+                        weight: 400;
+                    }
+                    line-height: 30px;
+                    border-right: 1px solid #474747;
+                    text-align: center;
+                    margin-top: 19px;
+                }
+
+                p.title{
+                    /* Style for "our planti" */
+                    color: #aa927f;
+                    font: {
+                        size: 13px;
+                        weight: 400;
+                    }
+                    @include transition(color .3s ease-out);
+                    line-height: 18px;
+                    width: 245px;
+                    padding-left: 15px;
+                    padding-right: 35px;
+                    text-transform: uppercase;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+h1
+  |Produtos da categoria
+section.product-list
+  nav.categories-list
+    ul.list-inline(*ngIf="categories.length")
+      li
+        span
+          |All
+      li(*ngFor="let cat of categories")
+        a([routerLink]="[ '', curr_lang, 'store' , 'categories', cat.slug]")
+          |{{cat.name + ' ' + cat.id}}
+          span(*ngIf="cat.selected")
+            | - selecionado
+        ul.product-list(*ngIf="cat.products.length")
+          li(*ngFor="let prod of cat.products")
+            span
+              |{{prod.name}}
+            a([routerLink]="['', curr_lang, 'store' , 'products', prod.slug]")
+              img([src]="prod.image")

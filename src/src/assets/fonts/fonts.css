@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'humanst521_btroman';
+    src: url('hum521n-webfont.woff2') format('woff2'),
+         url('hum521n-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'humanst521_lt_btlight';
+    src: url('hum521l-webfont.woff2') format('woff2'),
+         url('hum521l-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

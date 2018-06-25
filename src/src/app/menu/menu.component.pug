@@ -1,0 +1,42 @@
+nav#menu
+	div.menu-content
+		.menu-header
+			p([innerHTML]="'close' | translate",(click)="closeMenu()")
+
+		.menu-holder
+			.menu-langs
+				.langs((click)="changeLang('en',$event)")
+					p EN
+				.dot
+					p .
+				.langs((click)="changeLang('fr',$event)")
+					p FR
+				.dot 
+					p .
+				.langs((click)="changeLang('nl',$event)")
+					p NL
+
+			.menu-itens
+				a.item(href="#",[innerHTML]="'from-cocoa' | translate")
+				a.item(href="#",[innerHTML]="'online-store' | translate")
+				a.item(href="#",[innerHTML]="'workshop-visits' | translate")
+				a.item(href="#",[innerHTML]="'stores' | translate")
+				a.item(href="#",[innerHTML]="'news' | translate")
+				a.item(href="#",[innerHTML]="'contact' | translate")
+				
+			.menu-social
+				.social
+					a(href="http://www.facebook.com.br/",target="_blank")
+						svg-icon(src="../assets/svg/instagram.svg")
+
+				.separator
+
+				.social
+					a(href="http://www.facebook.com.br/",target="_blank")
+						svg-icon(src="../assets/svg/facebook.svg") 
+					
+				.separator
+
+				.social
+					a(href="http://www.facebook.com.br/",target="_blank")
+						svg-icon(src="../assets/svg/twitter.svg")

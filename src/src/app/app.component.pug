@@ -1,0 +1,24 @@
+header
+    base(href="/")
+    div.header-content
+        span.header-content-logo
+            //- a((click)="openContent()")
+            a((click)="openContent()")
+                svg-icon(src="../assets/svg/logo.svg")
+
+        div.header-content-menu((click)="openMenu()")
+            |menu
+            button.hamburger.hamburger--squeeze
+                span.hamburger-box
+                    span.hamburger-inner   
+
+router-outlet
+
+footer
+    div.footer-content
+        div.content-left
+
+
+
+        div.content-right
+            svg-icon(src="../assets/svg/audio.svg")

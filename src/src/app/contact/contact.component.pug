@@ -1,0 +1,41 @@
+//img#test(src='../../assets/images/content/lay.jpg')
+
+div.alerts
+	p(*ngIf="form.controls['fname'].hasError('required') && form.controls['fname'].touched")
+		| You must include a first name
+	p(*ngIf="form.controls['lname'].hasError('required') && form.controls['lname'].touched")
+		| You must include a last name
+	p(*ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched")
+		| You must include a email
+	p(*ngIf="form.controls['message'].hasError('required') && form.controls['message'].touched")
+		| You must include a message
+
+
+section#contact
+	main.container
+		h1
+			|CONTACT
+		.box-content
+			.infos
+				h2
+					| Main office
+				hr
+				p
+					| Rue de l'Estampage 6
+					br
+					| 4340 Awans
+					br
+					| Belgium
+				span
+					| +32 4 365 72 57
+			.form
+				form((ngSubmit)="processForm()", [formGroup]="form")
+					div.form-group
+						input#name.form-control(type='text', name='firstname', placeholder='First name', [formControl]="form.controls['fname']", [(ngModel)]="firstName")
+						input#name.form-control(type='text', name='lastName', placeholder='Last name', [formControl]="form.controls['lname']", [(ngModel)]="lastName")
+						input#name.form-control(type='email', name='email', placeholder='Email', [formControl]="form.controls['email']", [(ngModel)]="email")
+						textarea(name="message" placeholder='Message' rows='6', [formControl]="form.controls['message']", [(ngModel)]="message")
+						input(type='submit' value='SEND')
+						img.spinner(src="../../assets/images/content/spinner.gif", alt="", *ngIf="send")
+
+		

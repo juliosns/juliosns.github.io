@@ -1,0 +1,17 @@
+.store-product-detail
+    h3
+        |{{productToCart.product.name}}
+    p([innerHtml]="productToCart.product.description")
+
+    img([src]="productToCart.product.first_image")
+
+    hr
+    label
+        |Quantidade
+    input([(ngModel)]="productToCart.quantity", type="number")
+
+    button((click)="addProductToCart(productToCart)")
+        |Adicionar ao carrinho
+
+    a([routerLink]="['', curr_lang, 'store' , 'cart']")
+        |Ver carrinho

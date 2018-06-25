@@ -1,0 +1,240 @@
+@import './../../assets/sass-tools/tools.scss';
+
+section#gallery{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 900;
+    top: 0;
+    left: 0;
+    background-color: #1e1e1e;
+    opacity: 0;
+    will-change: opacity;
+    transition: opacity 0.35s ease-out;
+
+    &.in{
+        opacity: 1;
+        .close-btn{
+            transform: translateX(0);
+        }
+
+        div.slider-box{
+            div.slider-left,div.slider-right{
+                transform: translateY(0%);
+            }
+        }
+    }
+
+    .close-btn{
+        position: absolute;
+        right: 0;
+        top: 36px;
+        width: 150px;
+        height: 63px;
+        background-image: linear-gradient(to top, #1c1c1c 0%, #2f2f2f 82%, #2f2f2f 100%);
+        background-color: #2f2f2f;
+        cursor: pointer;
+        z-index: 15;
+        will-change: transform;
+        transform: translateX(100%);
+        transition: transform 0.25s ease-out .2s;
+        p{
+            color: #ccbdb2;
+            font: {
+                family: $crimsonItalic; 
+                size: 15px;
+            }
+            letter-spacing: ps-em(300);
+            text-align: center;
+            line-height: 65px;
+            text-indent: 22px;
+
+            &:after{
+                content: '';
+                background-color: #ccbdb2;
+                width: 24px;
+                height: 1px;
+                position: absolute;
+                left: 19px;
+                top: 33px;
+            }
+        }
+    }
+
+    .image{
+        width: 100%;
+        height: 100%;
+        display: block;
+
+        figure{
+            width: 100%;
+            height: 100%;
+            display: block;
+            background-size: cover !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
+            position: relative;
+            will-change: opacity;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            &.current{
+                z-index: 10;
+                &.out{
+                    transition: opacity .4s ease-out;
+                    opacity: 0;
+                }
+
+            }
+            
+            &.next{
+                opacity: 0;
+                z-index: 5;
+                &.in{
+                    transition: opacity .4s ease-out .1s;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    div.slider-box{
+        max-width: 1000px;
+        width: 100%;
+        height: 150px;
+        display: inline-table;
+        position: absolute;
+        bottom: 0;
+        @extend %alignH;
+        z-index: 15;
+
+        div.slider-left,div.slider-right{
+            display: table-cell;
+            width: 50%;
+            height: 151px;
+            background: red;
+        }
+
+		div.slider-left{
+            padding: 24px  49px 36px 29px;
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.15) 0%, rgba(255, 255, 255, 0.15) 82%, rgba(255, 255, 255, 0.15) 100%);
+            background-color: #e6ddd6;
+            will-change: transform;
+            transform: translateY(100%);
+            transition: transform 0.25s ease-out .3s;
+
+            p.slider-title{
+                color: #f3792d;
+                font: {
+                    family: $crimsonRoman;
+                    size: 24px;
+                }
+                margin-bottom: 19px;
+            }
+
+            p.slider-desc{
+                color: #2f2f2f;
+                font: {
+                    family: $crimsonItalic;
+                    size: 15px;
+                }
+            }
+        }
+
+		div.slider-right{
+            background-image: linear-gradient(to top, #1c1c1c 0%, #2f2f2f 82%, #2f2f2f 100%);
+            background-color: #2f2f2f;
+
+            will-change: transform;
+            transform: translateY(100%);
+            transition: transform 0.25s ease-out .4s;
+
+			div.slider-content{
+                width: 240px;
+                height: 47px;
+                margin: 0 auto;
+                margin-top: 52px;
+                
+
+				span.slider-arrow-left{
+                    float: left;
+                    width: 7px;
+                    cursor: pointer;
+                    height: 100%;
+
+                    svg-icon{
+                        width: 100%;
+                        height: auto;
+                        margin-top: 16px;
+
+                        /deep/{
+                            svg{
+                                width: 100%;
+                                height: auto;
+                                @include transform(scaleX(-1));
+                            }
+                        }
+                    }
+                }
+
+				div.slider-indicator{
+                    width: 41px;
+                    height: 47px;
+                    float: left;
+                    margin-left: 100px;
+
+                    p.current{
+                        color: #ccbdb2;
+                        font: {
+                            family: $crimsonRoman;
+                            size: 30px;
+                        }
+                        line-height: 20px;
+                        text-indent: 6px;
+                    }
+					span.divisor{
+                        width: 45px;
+                        height: 1px;
+                        display: block;
+                        background-color: #89674d;
+                        @include transform(rotate(-40deg));
+                        margin-top: 7px;
+                    }
+
+					p.total{
+                        color: #ccbdb2;
+                        font: {
+                            family: $crimsonRoman;
+                            size: 18px;
+                        }
+                        text-indent: 24px;
+                    }
+
+                }
+
+				span.slider-arrow-right{
+                    float: right;
+                    width: 7px;
+                    cursor: pointer;
+                    height: 100%;
+
+                    svg-icon{
+                        width: 100%;
+                        height: auto;
+                        margin-top: 16px;
+
+                        /deep/{
+                            svg{
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
+    }
+
+}
