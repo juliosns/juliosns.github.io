@@ -1,15 +1,16 @@
 webpackJsonp([1,4],{
 
-/***/ 103:
+/***/ 104:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__content_content_component__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__gallery_gallery_component__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__content_content_component__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__gallery_gallery_component__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_shared_svg_manager__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_shared_sound_manager__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_shared_svg_manager__ = __webpack_require__(36);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -20,6 +21,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -47,8 +49,8 @@ var AppComponent = (function () {
     }
     AppComponent.prototype.ngOnInit = function () {
         this.svgManager.getSvg('footer .content-right svg').then((function (svgBase) {
-            // SoundManager.getInstance().configMuteController(svgBase);
-            // SoundManager.getInstance().playSoundByID('trail');
+            __WEBPACK_IMPORTED_MODULE_5_shared_sound_manager__["a" /* SoundManager */].getInstance().configMuteController(svgBase);
+            __WEBPACK_IMPORTED_MODULE_5_shared_sound_manager__["a" /* SoundManager */].getInstance().playSoundByID('trail');
         }));
     };
     AppComponent.prototype.openGallery = function (close) {
@@ -76,7 +78,7 @@ AppComponent = __decorate([
         styles: [__webpack_require__(170)],
         providers: [__WEBPACK_IMPORTED_MODULE_2__gallery_gallery_component__["a" /* GalleryComponent */], __WEBPACK_IMPORTED_MODULE_1__content_content_component__["a" /* ContentComponent */]]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__gallery_gallery_component__["a" /* GalleryComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__gallery_gallery_component__["a" /* GalleryComponent */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_core__["R" /* ComponentFactoryResolver */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_core__["R" /* ComponentFactoryResolver */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_core__["S" /* ViewContainerRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_core__["S" /* ViewContainerRef */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* ActivatedRoute */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5_shared_svg_manager__["a" /* SvgManager */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_shared_svg_manager__["a" /* SvgManager */]) === "function" && _g || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__gallery_gallery_component__["a" /* GalleryComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__gallery_gallery_component__["a" /* GalleryComponent */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_core__["R" /* ComponentFactoryResolver */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_core__["R" /* ComponentFactoryResolver */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_core__["S" /* ViewContainerRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_core__["S" /* ViewContainerRef */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* ActivatedRoute */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_6_shared_svg_manager__["a" /* SvgManager */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_shared_svg_manager__["a" /* SvgManager */]) === "function" && _g || Object])
 ], AppComponent);
 
 var _a, _b, _c, _d, _e, _f, _g;
@@ -84,18 +86,18 @@ var _a, _b, _c, _d, _e, _f, _g;
 
 /***/ }),
 
-/***/ 104:
+/***/ 105:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_shared_module__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_shared_module__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__splash_splash_component__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__splash_splash_component__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angular_svg_icon__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_core__ = __webpack_require__(1);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
@@ -149,7 +151,7 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 105:
+/***/ 106:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -201,7 +203,7 @@ var _a;
 
 /***/ }),
 
-/***/ 106:
+/***/ 107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -321,7 +323,7 @@ var _a;
 
 /***/ }),
 
-/***/ 107:
+/***/ 108:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -392,7 +394,7 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 108:
+/***/ 109:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -451,13 +453,13 @@ var ComponentSuffix_1;
 
 /***/ }),
 
-/***/ 109:
+/***/ 110:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__value_animator__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sound_manager__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__component_suffix__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sound_manager__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__component_suffix__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__svg_manager__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(1);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
@@ -486,181 +488,6 @@ SharedModule = __decorate([
 ], SharedModule);
 
 //# sourceMappingURL=shared.module.js.map
-
-/***/ }),
-
-/***/ 110:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SoundManager; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var SOUND_BASE_PATH = "../assets/sounds/";
-var SoundManager = (function () {
-    function SoundManager() {
-        var _this = this;
-        this.onDataLoaded = function (response) {
-            _this.configExtension();
-            _this._soundsData = new Array();
-            var data = JSON.parse(response.srcElement.responseText);
-            var i = 0, len = data.length;
-            for (i; i < len; i++) {
-                var dataEl = data[i];
-                var id = dataEl.id;
-                var sound = new SoundFile(dataEl.id, dataEl.path, (dataEl.loop == 'true') ? true : false, _this._soundExtension);
-                _this._soundsData[id] = sound;
-            }
-        };
-        this.configExtension = function () {
-            var elem = document.createElement('audio');
-            if (elem.canPlayType('audio/mpeg;') == "probably") {
-                _this._soundExtension = ".mp3";
-            }
-            else if (elem.canPlayType('audio/ogg; codecs="vorbis"') == "probably") {
-                _this._soundExtension = ".ogg";
-            }
-            else if (elem.canPlayType('audio/wav; codecs="1"') == "probably") {
-                _this._soundExtension = ".wav";
-            }
-            else if (elem.canPlayType('audio/x-m4a;') || elem.canPlayType('audio/aac;') == "probably") {
-                _this._soundExtension = ".m4a";
-            }
-        };
-        this.playSoundByID = function (id) {
-            if (_this._soundsData != undefined) {
-                if (_this._soundsData[id]) {
-                    _this._soundsData[id].play();
-                }
-                else {
-                    console.warn('SOUND NOT FOUND ', id);
-                }
-            }
-            else {
-                setTimeout(_this.playSoundByID, 200, id);
-            }
-        };
-        this.configMuteController = function (el) {
-            var vol = new VolumeController(el);
-        };
-        this.updateSoundsVolume = function (volume) {
-            Object.keys(_this._soundsData).forEach(function (key) {
-                _this._soundsData[key].setVolume(volume);
-            });
-        };
-    }
-    SoundManager.config = function () {
-        var request = new XMLHttpRequest();
-        request.onload = this.getInstance().onDataLoaded;
-        request.open("get", "../assets/sounds/sounds.json", true);
-        request.send();
-    };
-    SoundManager.getInstance = function () {
-        if (!this._instance) {
-            this._instance = new this();
-            this.config();
-        }
-        return this._instance;
-    };
-    return SoundManager;
-}());
-SoundManager = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])()
-], SoundManager);
-
-var SoundFile = (function () {
-    function SoundFile(id, path, loop, soundExtension) {
-        var _this = this;
-        this.id = id;
-        this.path = path;
-        this.loop = loop;
-        this.soundExtension = soundExtension;
-        this.loadSound = function (path) {
-            _this._audio = new Audio(path);
-            _this._audio.autoplay = false;
-            _this._audio.preload = 'auto';
-            _this._audio.loop = _this._loop;
-            _this._audio.autobuffer = true;
-        };
-        this.play = function () {
-            _this._audio.play();
-        };
-        this.setVolume = function (volume) {
-            _this._audio.volume = volume;
-        };
-        this._id = id;
-        this._soundExtension = soundExtension;
-        this._loop = loop;
-        this.loadSound(SOUND_BASE_PATH + path + this._soundExtension);
-    }
-    return SoundFile;
-}());
-var VolumeController = (function () {
-    function VolumeController(el) {
-        var _this = this;
-        this.el = el;
-        this._animating = false;
-        this._targetVolume = 0;
-        this._currVolume = 0;
-        this.configItems = function () {
-            console.log('ASDASD');
-            var items = _this._baseElement.querySelectorAll('path');
-            if (!items.length) {
-                setTimeout(_this.configItems, 100);
-                return false;
-            }
-            _this.toggleVolume();
-            _this._animating = !_this._animating;
-            if (_this._animating) {
-                _this._animationInterval = setInterval(function () {
-                    var i = 0, len = 5;
-                    for (i; i < len; i++) {
-                        var intensity = Math.random() * 1;
-                        items[i].style.transform = 'scaleY(' + intensity + ')';
-                    }
-                }, 250);
-            }
-            else {
-                clearInterval(_this._animationInterval);
-                setTimeout(function () {
-                    var i = 0, len = 5;
-                    for (i; i < len; i++) {
-                        var intensity = 0.05;
-                        items[i].style.transform = 'scaleY(' + intensity + ')';
-                    }
-                }, 300);
-            }
-        };
-        this.toggleVolume = function () {
-            _this._targetVolume = (_this._targetVolume) ? 0 : 1;
-            clearInterval(_this._fadeVolumeInterval);
-            _this._fadeVolumeInterval = setInterval(function () {
-                if (_this._targetVolume) {
-                    _this._currVolume += 0.1;
-                }
-                else {
-                    _this._currVolume -= 0.1;
-                }
-                if (_this._currVolume == _this._targetVolume || (_this._currVolume < 0 || (_this._currVolume > _this._targetVolume && _this._targetVolume))) {
-                    _this._currVolume = _this._targetVolume;
-                    clearInterval(_this._fadeVolumeInterval);
-                }
-                SoundManager.getInstance().updateSoundsVolume(_this._currVolume);
-            }, 50);
-        };
-        this._baseElement = el;
-        this.configItems();
-        this._baseElement.addEventListener('click', this.configItems);
-    }
-    return VolumeController;
-}());
-//# sourceMappingURL=sound.manager.js.map
 
 /***/ }),
 
@@ -870,7 +697,7 @@ module.exports = __webpack_require__.p + "teste-2.46319b846e73444166b7.jpg";
 /***/ 222:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(91);
+module.exports = __webpack_require__(92);
 
 
 /***/ }),
@@ -939,7 +766,182 @@ var environment = {
 
 /***/ }),
 
-/***/ 90:
+/***/ 63:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SoundManager; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var SOUND_BASE_PATH = "../assets/sounds/";
+var SoundManager = (function () {
+    function SoundManager() {
+        var _this = this;
+        this.onDataLoaded = function (response) {
+            _this.configExtension();
+            _this._soundsData = new Array();
+            var data = JSON.parse(response.srcElement.responseText);
+            var i = 0, len = data.length;
+            for (i; i < len; i++) {
+                var dataEl = data[i];
+                var id = dataEl.id;
+                var sound = new SoundFile(dataEl.id, dataEl.path, (dataEl.loop == 'true') ? true : false, _this._soundExtension);
+                _this._soundsData[id] = sound;
+            }
+        };
+        this.configExtension = function () {
+            var elem = document.createElement('audio');
+            if (elem.canPlayType('audio/mpeg;') == "probably") {
+                _this._soundExtension = ".mp3";
+            }
+            else if (elem.canPlayType('audio/ogg; codecs="vorbis"') == "probably") {
+                _this._soundExtension = ".ogg";
+            }
+            else if (elem.canPlayType('audio/wav; codecs="1"') == "probably") {
+                _this._soundExtension = ".wav";
+            }
+            else if (elem.canPlayType('audio/x-m4a;') || elem.canPlayType('audio/aac;') == "probably") {
+                _this._soundExtension = ".m4a";
+            }
+        };
+        this.playSoundByID = function (id) {
+            if (_this._soundsData != undefined) {
+                if (_this._soundsData[id]) {
+                    _this._soundsData[id].play();
+                }
+                else {
+                    console.warn('SOUND NOT FOUND ', id);
+                }
+            }
+            else {
+                setTimeout(_this.playSoundByID, 200, id);
+            }
+        };
+        this.configMuteController = function (el) {
+            var vol = new VolumeController(el);
+        };
+        this.updateSoundsVolume = function (volume) {
+            Object.keys(_this._soundsData).forEach(function (key) {
+                _this._soundsData[key].setVolume(volume);
+            });
+        };
+    }
+    SoundManager.config = function () {
+        var request = new XMLHttpRequest();
+        request.onload = this.getInstance().onDataLoaded;
+        request.open("get", "../assets/sounds/sounds.json", true);
+        request.send();
+    };
+    SoundManager.getInstance = function () {
+        if (!this._instance) {
+            this._instance = new this();
+            this.config();
+        }
+        return this._instance;
+    };
+    return SoundManager;
+}());
+SoundManager = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])()
+], SoundManager);
+
+var SoundFile = (function () {
+    function SoundFile(id, path, loop, soundExtension) {
+        var _this = this;
+        this.id = id;
+        this.path = path;
+        this.loop = loop;
+        this.soundExtension = soundExtension;
+        this.loadSound = function (path) {
+            _this._audio = new Audio(path);
+            _this._audio.autoplay = false;
+            _this._audio.preload = 'auto';
+            _this._audio.loop = _this._loop;
+            _this._audio.autobuffer = true;
+        };
+        this.play = function () {
+            _this._audio.play();
+        };
+        this.setVolume = function (volume) {
+            _this._audio.volume = volume;
+        };
+        this._id = id;
+        this._soundExtension = soundExtension;
+        this._loop = loop;
+        this.loadSound(SOUND_BASE_PATH + path + this._soundExtension);
+    }
+    return SoundFile;
+}());
+var VolumeController = (function () {
+    function VolumeController(el) {
+        var _this = this;
+        this.el = el;
+        this._animating = false;
+        this._targetVolume = 0;
+        this._currVolume = 0;
+        this.configItems = function () {
+            console.log('ASDASD');
+            var items = _this._baseElement.querySelectorAll('path');
+            if (!items.length) {
+                setTimeout(_this.configItems, 100);
+                return false;
+            }
+            _this.toggleVolume();
+            _this._animating = !_this._animating;
+            if (_this._animating) {
+                _this._animationInterval = setInterval(function () {
+                    var i = 0, len = 5;
+                    for (i; i < len; i++) {
+                        var intensity = Math.random() * 1;
+                        items[i].style.transform = 'scaleY(' + intensity + ')';
+                    }
+                }, 250);
+            }
+            else {
+                clearInterval(_this._animationInterval);
+                setTimeout(function () {
+                    var i = 0, len = 5;
+                    for (i; i < len; i++) {
+                        var intensity = 0.05;
+                        items[i].style.transform = 'scaleY(' + intensity + ')';
+                    }
+                }, 300);
+            }
+        };
+        this.toggleVolume = function () {
+            _this._targetVolume = (_this._targetVolume) ? 0 : 1;
+            clearInterval(_this._fadeVolumeInterval);
+            _this._fadeVolumeInterval = setInterval(function () {
+                if (_this._targetVolume) {
+                    _this._currVolume += 0.1;
+                }
+                else {
+                    _this._currVolume -= 0.1;
+                }
+                if (_this._currVolume == _this._targetVolume || (_this._currVolume < 0 || (_this._currVolume > _this._targetVolume && _this._targetVolume))) {
+                    _this._currVolume = _this._targetVolume;
+                    clearInterval(_this._fadeVolumeInterval);
+                }
+                SoundManager.getInstance().updateSoundsVolume(_this._currVolume);
+            }, 50);
+        };
+        this._baseElement = el;
+        this.configItems();
+        this._baseElement.addEventListener('click', this.configItems);
+    }
+    return VolumeController;
+}());
+//# sourceMappingURL=sound.manager.js.map
+
+/***/ }),
+
+/***/ 91:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -948,19 +950,19 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 90;
+webpackEmptyContext.id = 91;
 
 
 /***/ }),
 
-/***/ 91:
+/***/ 92:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(62);
 
 

@@ -35,8 +35,8 @@ export class AppComponent implements OnInit {
 
     ngOnInit(){
         this.svgManager.getSvg('footer .content-right svg').then((svgBase => {
-            // SoundManager.getInstance().configMuteController(svgBase);
-            // SoundManager.getInstance().playSoundByID('trail');
+            SoundManager.getInstance().configMuteController(svgBase);
+            SoundManager.getInstance().playSoundByID('trail');
         }));
     }
 
