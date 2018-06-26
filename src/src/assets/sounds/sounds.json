@@ -1,45 +1,9 @@
 [{
-  "id": "tok1",
-  "path": "ssj",
-  "loop":"false"
-},{
-  "id": "main_trail",
-  "path": "trail",
+  "id": "trail",
+  "path": "trail_1",
   "loop":"true"
 },{
-  "id": "tok3",
-  "path": "ssj",
-  "loop":"true"
-},{
-  "id": "tok4",
-  "path": "ssj",
-  "loop":"true"
-},{
-  "id": "tok5",
-  "path": "ssj",
-  "loop":"true"
-},{
-  "id": "tok6",
-  "path": "ssj",
-  "loop":"true"
-},{
-  "id": "tok7",
-  "path": "ssj",
-  "loop":"true"
-},{
-  "id": "tok8",
-  "path": "ssj",
-  "loop":"true"
-},{
-  "id": "tok9",
-  "path": "ssj",
-  "loop":"true"
-},{
-  "id": "tok10",
-  "path": "ssj",
-  "loop":"true"
-},{
-  "id": "blop",
-  "path": "blop",
-  "loop":"false"
+  "id": "trail_sec",
+  "path": "trail_2",
+  "loop": "true"
 }]

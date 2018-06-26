@@ -22,10 +22,6 @@ export class SoundManager {
 
 	private configExtension = () =>{
 		let elem = document.createElement('audio');
-		// console.log('mp3', elem.canPlayType('audio/mpeg;'));
-		// console.log('ogg', elem.canPlayType('audio/ogg; codecs="vorbis"'));
-		// console.log('wav', elem.canPlayType('audio/wav; codecs="1"'));
-		// console.log('m4a', elem.canPlayType('audio/x-m4a;') || elem.canPlayType('audio/aac;'));
 		
 		if(elem.canPlayType('audio/mpeg;') == "probably"){
 			this._soundExtension = ".mp3";
@@ -36,7 +32,6 @@ export class SoundManager {
 		}else if(elem.canPlayType('audio/x-m4a;') || elem.canPlayType('audio/aac;') == "probably"){
 			this._soundExtension = ".m4a";
 		}
-                
 	}
 
 	private static config(){
@@ -96,7 +91,6 @@ class SoundFile{
 		this._audio.preload = 'auto';
 		this._audio.loop = this._loop;
 		this._audio.autobuffer = true;  
-
 	}
 
 	public play=()=>{
@@ -123,6 +117,7 @@ class VolumeController{
 	}
 
 	configItems=()=>{
+		console.log('ASDASD')
         var items = this._baseElement.querySelectorAll('path');
         if(!items.length){
             setTimeout(this.configItems, 100);

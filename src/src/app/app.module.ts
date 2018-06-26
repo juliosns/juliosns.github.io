@@ -9,19 +9,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { SplashComponent } from './splash/splash.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 
 import { Injectable } from '@angular/core';
 
 import { NgModule, Type, Directive, Component } from '@angular/core';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/en', pathMatch: 'full'}, 
   {path: '', component: SplashComponent}
 ];
-
-export function translateLoader(http: Http) { return new TranslateStaticLoader(http, './../assets/lang/', '.json')}
-
 
 @NgModule({ 
   declarations: [ 
@@ -38,11 +33,6 @@ export function translateLoader(http: Http) { return new TranslateStaticLoader(h
     HttpModule,
     RouterModule.forRoot(routes),
     AngularSvgIconModule, 
-    TranslateModule.forRoot({
-        provide: TranslateLoader, 
-        useFactory: translateLoader,
-        deps: [Http]
-    }),
     SharedModule,
   ],
   providers: [],
