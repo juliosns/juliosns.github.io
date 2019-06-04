@@ -1,9 +1,0 @@
-[{
-  "id": "trail",
-  "path": "trail_1",
-  "loop":"true"
-},{
-  "id": "trail_sec",
-  "path": "trail_2",
-  "loop": "true"
-}]
