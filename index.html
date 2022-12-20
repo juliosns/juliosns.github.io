@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Niver dos Gu</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    :host {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 14px;
+      color: #333;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 8px 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .spacer {
+      flex: 1;
+    }
+
+    .content {
+      display: flex;
+      margin: 82px auto 32px;
+      padding: 0 16px;
+      max-width: 960px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    footer {
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      line-height: 20px;
+    }
+
+    footer a {
+      display: flex;
+      align-items: center;
+    }
+
+    /* Responsive Styles */
+    @media screen and (max-width: 767px) {
+      .card-container > *:not(.circle-link) ,
+      .terminal {
+        width: 100%;
+      }
+
+      .card:not(.highlight-card) {
+        height: 16px;
+        margin: 8px 0;
+      }
+
+      .card.highlight-card span {
+        margin-left: 72px;
+      }
+
+      svg#rocket-smoke {
+        right: 120px;
+        transform: rotate(-5deg);
+      }
+    }
+
+    @media screen and (max-width: 575px) {
+      svg#rocket-smoke {
+        display: none;
+        visibility: hidden;
+      }
+    }
+
+    html,
+    body {
+        height: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+        font-family:'Rubik_Spray_Paint', serif;
+        font-size: 30px;
+    }
+
+    body {
+        background: url(./assets/images/bg.jpg) no-repeat center right;
+        background-size: cover;
+        color: #00548c;
+    }
+
+    .content {
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+    }
+    .content .chars {
+        width: 60%;
+        margin: 0 auto;
+        background: url(../assets/images/chars.png) no-repeat center center;
+        background-size: contain;
+        height: 25%;
+        bottom: 5%;
+        position: absolute;
+    }
+    .content .shield {
+        width: 240px;
+        margin: 0 auto;
+        background: url(../assets/images/shield.png) no-repeat bottom center;
+        background-size: contain;
+        height: 320px;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        row-gap: 10px;
+    }
+    .content .shield .name {
+        margin: 0 auto;
+    }
+    .content .description {
+        display: contents;
+    }
+    .content .description .title {
+        margin-bottom: 20px;
+    }
+    .content .description .title, .content .description .subtitle {
+        display: flex;
+    }
+    .content .description .subtitle .letter--space-before {
+        padding-left: 20px;
+    }
+    .content .letter {
+        width: 50px;
+    }
+    .content .letter--space-before {
+        padding-left: 50px;
+    }
+    .content .letter--space-before__small {
+        padding-left: 20px;
+    }
+    .content .letter__small {
+        width: 20px;
+    }
+    .buttons button {
+        background-color: white;
+        width: 200px;
+        height: 75px;
+        border-radius: 50px;
+        border-width: 5px;
+        border-color: #00548c;
+        font-size: 20px;
+    }
+    .buttons button.btn_space {
+        margin-left: 75px;
+    }
+    footer {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        left: 0;
+    }
+    footer h3 {
+        margin: 0 auto;
+        color: darkred;
+    }
+    .modal {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s ease-out;
+        position: absolute;
+        background-color: aqua;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+    }
+    .modal .form, .modal .map {
+        display: none;
+    }
+    .modal .map .info {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .modal iframe {
+        position: absolute;
+    }
+    .modal .form iframe {
+        bottom: 120px;
+    }
+    .modal .map iframe {
+        bottom: 50px;
+    }
+    .modal .buttons {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        left: 0;
+        display: flex;
+    }
+    .modal .buttons button {
+        margin: 0 auto;
+    }
+    @media (max-width: 480px) {
+        .content {
+            margin: 25px auto 0 !important;
+            padding: 0 !important;
+        }
+        .content .letter {
+            width: 30px;
+        }
+        .content .letter--space-before {
+            padding-left: 30px;
+        }
+        .content .letter--space-before__small {
+            padding-left: 15px;
+        }
+        .content .letter__small {
+            width: 15px;
+        }
+        .content .shield {
+            width: 160px;
+            height: 210px;
+            row-gap: 5px;
+        }
+        .content .chars {
+            width: 100%;
+        }
+        .content .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 90px;
+        }
+        .content .buttons button {
+            width: 80%;
+            margin-top: 25px;
+        }
+        .content .buttons button.btn_space {
+            margin-left: 0;
+        }
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="content" role="main">
+    <div class="description">
+      <!-- <h1 class="title">NIVER DOSGU</h1> -->
+      <div class="title">
+        <img class="letter" src="/assets/fonts/pp/Font Style/SVG/N.svg" alt="">
+        <img class="letter" src="/assets/fonts/pp/Font Style/SVG/I.svg" alt="">
+        <img class="letter" src="/assets/fonts/pp/Font Style/SVG/V.svg" alt="">
+        <img class="letter" src="/assets/fonts/pp/Font Style/SVG/E.svg" alt="">
+        <img class="letter" src="/assets/fonts/pp/Font Style/SVG/R.svg" alt="">
+        <img class="letter letter--space-before" src="/assets/fonts/pp/Font Style/SVG/D_paw.svg" alt="">
+        <img class="letter" src="/assets/fonts/pp/Font Style/SVG/O_paw.svg" alt="">
+        <img class="letter" src="/assets/fonts/pp/Font Style/SVG/S.svg" alt="">
+        <img class="letter letter--space-before" src="/assets/fonts/pp/Font Style/SVG/G.svg" alt="">
+        <img class="letter" src="/assets/fonts/pp/Font Style/SVG/U.svg" alt="">
+      </div>
+      <div class="subtitle">
+        <!-- Venha comemorar nosso primeiro aninho conosco -->
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/V.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/E.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/N.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/H.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/A_paw.svg" alt="">
+        <img class="letter letter__small letter--space-before" src="/assets/fonts/pp/Font Style/SVG/C.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/O_paw.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/M.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/E.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/M.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/O_paw.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/R_paw.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/A_paw.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/R_paw.svg" alt="">
+        <img class="letter letter__small letter--space-before" src="/assets/fonts/pp/Font Style/SVG/C.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/O_paw.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/N.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/O_paw.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/N.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/O_paw.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/S.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/C.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/O_paw.svg" alt="">
+      </div>
+      <div class="subtitle">
+        <img class="letter letter__small letter--space-before" src="/assets/fonts/pp/Font Style/SVG/N.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/O_paw.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/S.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/S.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/O_paw.svg" alt="">
+        <img class="letter letter__small letter--space-before" src="/assets/fonts/pp/Font Style/SVG/1.svg" alt="">
+        <img class="letter letter__small letter--space-before" src="/assets/fonts/pp/Font Style/SVG/A_paw.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/N.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/I.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/N.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/H.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/O_paw.svg  " alt="">
+
+      </div>
+    </div>
+    <div class="shield">
+      <div class="name">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/A_paw.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/N.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/T.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/H.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/O_paw.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/N.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/Y.svg" alt="">
+      </div>
+      <div class="name">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/E.svg" alt="">
+      </div>
+      <div class="name">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/S.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/A_paw.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/M.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/U.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/E.svg" alt="">
+        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/L.svg" alt="">
+      </div>
+    </div>
+    <div class="buttons">
+      <button>Confirmar presença</button>
+      <button class="btn_space">Ver data / local</button>
+    </div>
+    <div class="chars"></div>
+    <footer>
+      <h3>POR FAVOR CONFIRMAR PRESENÇA ATÉ DIA 29/12</h3>
+    </footer>
+  </div>
+
+  <div class="modal">
+    <div class="form">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSchb5a9iXIKzvQPKhOE904IF_SSCCuvaPw69DFfgceppQtPeQ/viewform?embedded=true" width="100%" height="85%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+
+    <div class="map">
+      <div class="info">
+        <h1>Dia 14/01/2023 às 17:00</h1>
+        <h2>Local, Brincar e Ser Feliz - Salão de Festas</h2>
+        <h3>Av. Duque de Caxias, 600 - Fragata, Pelotas - RS</h3>
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3392.486163596371!2d-52.37699148255615!3d-31.757223599999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9511cb3bc27a92bf%3A0x814e6c682493a097!2sBrincar%20e%20Ser%20Feliz%20-%20Sal%C3%A3o%20de%20Festas!5e0!3m2!1spt-BR!2sbr!4v1671302621617!5m2!1spt-BR!2sbr" width="100%" height="70%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="buttons">
+      <button>Fechar</button>
+    </div>
+  </div>
+</body>
+</html>
