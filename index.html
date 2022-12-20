@@ -4,297 +4,15 @@
   <meta charset="utf-8">
   <title>Niver dos Gu</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <style>
-    :host {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-      font-size: 14px;
-      color: #333;
-      box-sizing: border-box;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      margin: 8px 0;
-    }
-
-    p {
-      margin: 0;
-    }
-
-    .spacer {
-      flex: 1;
-    }
-
-    .content {
-      display: flex;
-      margin: 82px auto 32px;
-      padding: 0 16px;
-      max-width: 960px;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    footer {
-      margin-top: 8px;
-      display: flex;
-      align-items: center;
-      line-height: 20px;
-    }
-
-    footer a {
-      display: flex;
-      align-items: center;
-    }
-
-    /* Responsive Styles */
-    @media screen and (max-width: 767px) {
-      .card-container > *:not(.circle-link) ,
-      .terminal {
-        width: 100%;
-      }
-
-      .card:not(.highlight-card) {
-        height: 16px;
-        margin: 8px 0;
-      }
-
-      .card.highlight-card span {
-        margin-left: 72px;
-      }
-
-      svg#rocket-smoke {
-        right: 120px;
-        transform: rotate(-5deg);
-      }
-    }
-
-    @media screen and (max-width: 575px) {
-      svg#rocket-smoke {
-        display: none;
-        visibility: hidden;
-      }
-    }
-
-    html,
-    body {
-        height: 100%;
-        margin: 0 auto;
-        overflow: hidden;
-        font-family:'Rubik_Spray_Paint', serif;
-        font-size: 30px;
-    }
-
-    body {
-        background: url(./assets/images/bg.jpg) no-repeat center right;
-        background-size: cover;
-        color: #00548c;
-    }
-
-    .content {
-        margin: 0;
-        padding: 0;
-        max-width: 100%;
-        width: 100%;
-        height: 100%;
-    }
-    .content .chars {
-        width: 60%;
-        margin: 0 auto;
-        background: url(../assets/images/chars.png) no-repeat center center;
-        background-size: contain;
-        height: 25%;
-        bottom: 5%;
-        position: absolute;
-    }
-    .content .shield {
-        width: 240px;
-        margin: 0 auto;
-        background: url(../assets/images/shield.png) no-repeat bottom center;
-        background-size: contain;
-        height: 320px;
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        row-gap: 10px;
-    }
-    .content .shield .name {
-        margin: 0 auto;
-    }
-    .content .description {
-        display: contents;
-    }
-    .content .description .title {
-        margin-bottom: 20px;
-    }
-    .content .description .title, .content .description .subtitle {
-        display: flex;
-    }
-    .content .description .subtitle .letter--space-before {
-        padding-left: 20px;
-    }
-    .content .letter {
-        width: 50px;
-    }
-    .content .letter--space-before {
-        padding-left: 50px;
-    }
-    .content .letter--space-before__small {
-        padding-left: 20px;
-    }
-    .content .letter__small {
-        width: 20px;
-    }
-    .buttons button {
-        background-color: white;
-        width: 200px;
-        height: 75px;
-        border-radius: 50px;
-        border-width: 5px;
-        border-color: #00548c;
-        font-size: 20px;
-        cursor: pointer;
-    }
-    .buttons button.btn_space {
-        margin-left: 75px;
-    }
-    footer {
-        position: absolute;
-        bottom: 20px;
-        width: 100%;
-        left: 0;
-    }
-    footer h3 {
-        margin: 0 auto;
-        color: darkred;
-    }
-    .modal {
-        display: none;
-        opacity: 0;
-        transition: opacity 0.5s ease-out;
-        position: absolute;
-        background-color: aqua;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        right: 0;
-    }
-    .modal .form, .modal .map {
-        display: none;
-    }
-    .modal .map .info {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-    .modal iframe {
-        position: absolute;
-    }
-    .modal .form iframe {
-        bottom: 120px;
-    }
-    .modal .map iframe {
-        bottom: 50px;
-    }
-    .modal .buttons {
-        position: absolute;
-        bottom: 10px;
-        width: 100%;
-        left: 0;
-        display: flex;
-    }
-    .modal .buttons button {
-        margin: 0 auto;
-    }
-    @media (max-width: 480px) {
-        .content {
-            margin: 25px auto 0 !important;
-            padding: 0 !important;
-        }
-        .content .letter {
-            width: 30px;
-        }
-        .content .letter--space-before {
-            padding-left: 30px;
-        }
-        .content .letter--space-before__small {
-            padding-left: 14px;
-        }
-        .content .letter__small {
-            width: 14px;
-        }
-        .content .shield {
-            width: 200px;
-            height: 270px;
-            row-gap: 5px;
-        }
-
-        .content .shield .name {
-          display: flex;
-        }
-
-        .content .chars {
-            width: 100%;
-        }
-        .content .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 0;
-        }
-        .content .buttons button {
-            width: 80%;
-            margin-top: 25px;
-        }
-        .content .buttons button.btn_space {
-            margin-left: 0;
-        }
-
-        .modal .map .info {
-          font-size: 15px;
-        }
-
-
-
-        footer h3 {
-          font-size: 14px;
-        }
-    }
-  </style>
-  <script type="text/javascript">
-    window.addEventListener("load", (event) => {
-      document.querySelector('#confirm-btn').addEventListener('click', () => {
-        document.querySelector('.form').style.display = 'block';
-        document.querySelector('.map').style.display = 'none';
-        document.querySelector('.modal').style.display = 'block';
-        document.querySelector('.modal').style.opacity = 1;
-      });
-
-      document.querySelector('#date-btn').addEventListener('click', () => {
-        document.querySelector('.form').style.display = 'none';
-        document.querySelector('.map').style.display = 'block';
-        document.querySelector('.modal').style.display = 'block';
-        document.querySelector('.modal').style.opacity = 1;
-      });
-
-      document.querySelector('#close-btn').addEventListener('click', () => {
-        document.querySelector('.modal').style.display = 'none';
-        document.querySelector('.modal').style.opacity = 0;
-      });
-    });
-  </script>
+  <link rel="stylesheet" href="./css/default.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <script src="./js/default.js"></script>
 </head>
 <body>
   <div class="content" role="main">
     <div class="description">
-      <!-- <h1 class="title">NIVER DOSGU</h1> -->
       <div class="title">
         <img class="letter" src="/assets/fonts/pp/Font Style/SVG/N.svg" alt="">
         <img class="letter" src="/assets/fonts/pp/Font Style/SVG/I.svg" alt="">
@@ -307,6 +25,7 @@
         <img class="letter letter--space-before" src="/assets/fonts/pp/Font Style/SVG/G.svg" alt="">
         <img class="letter" src="/assets/fonts/pp/Font Style/SVG/U.svg" alt="">
       </div>
+
       <div class="subtitle">
         <!-- Venha comemorar nosso primeiro aninho conosco -->
         <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/V.svg" alt="">
@@ -350,25 +69,29 @@
       </div>
     </div>
     <div class="shield">
-      <div class="name">
-        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/A_paw.svg" alt="">
-        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/N.svg" alt="">
-        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/T.svg" alt="">
-        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/H.svg" alt="">
-        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/O_paw.svg" alt="">
-        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/N.svg" alt="">
-        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/Y.svg" alt="">
-      </div>
-      <div class="name">
-        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/E.svg" alt="">
-      </div>
-      <div class="name">
-        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/S.svg" alt="">
-        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/A_paw.svg" alt="">
-        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/M.svg" alt="">
-        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/U.svg" alt="">
-        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/E.svg" alt="">
-        <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/L.svg" alt="">
+      <img src="./assets/images/shield.png" alt="shield" class="shield-img">
+
+      <div class="name-container">
+        <div class="name">
+          <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/A_paw.svg" alt="">
+          <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/N.svg" alt="">
+          <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/T.svg" alt="">
+          <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/H.svg" alt="">
+          <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/O_paw.svg" alt="">
+          <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/N.svg" alt="">
+          <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/Y.svg" alt="">
+        </div>
+        <div class="name">
+          <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/E.svg" alt="">
+        </div>
+        <div class="name">
+          <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/S.svg" alt="">
+          <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/A_paw.svg" alt="">
+          <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/M.svg" alt="">
+          <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/U.svg" alt="">
+          <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/E.svg" alt="">
+          <img class="letter letter__small" src="/assets/fonts/pp/Font Style/SVG/L.svg" alt="">
+        </div>
       </div>
     </div>
     <div class="buttons">
