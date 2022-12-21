@@ -200,7 +200,7 @@
   .modal .buttons button {
       margin: 0 auto;
   }
-  
+
 @media (max-width: 640px) {
     .content .letter {
         width: 35px;
@@ -216,6 +216,11 @@
 
     .modal .map .info {
         font-size: 31px;
+    }
+
+    .modal .buttons button{
+        position: absolute;
+        right: 20px;
     }
 }
 
