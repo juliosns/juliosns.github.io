@@ -311,6 +311,12 @@
     .name .letter__small {
         width: 21px;
     }
+
+    .description .subtitle {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 @media (max-height: 990px) {
