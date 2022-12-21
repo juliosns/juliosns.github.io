@@ -117,6 +117,11 @@
   .content .description .subtitle .letter--space-before {
       margin-left: 20px;
   }
+
+  .content .description .subtitle {
+    display: flex;
+  }
+
   .content .letter {
       width: 50px;
   }
